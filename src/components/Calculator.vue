@@ -9,33 +9,33 @@
       </div>
     </div>
     <div class="row-1">
-      <div class="button" @click="clear">AC</div>
-      <div class="button" @click="cancel">&larr;</div>
-      <div class="button" @click="enter('%')">%</div>
-      <div class="button" @click="enter('/')">/</div>
+      <div class="button" id="ac" @click="clear">AC</div>
+      <div class="button" id="ac" @click="cancel">&larr;</div>
+      <div class="button" id="div" @click="enter('%')">%</div>
+      <div class="button" id="div" @click="enter('/')">/</div>
     </div>
     <div class="row-2">
       <div class="button" @click="enter(7)">7</div>
       <div class="button" @click="enter(8)">8</div>
       <div class="button" @click="enter(9)">9</div>
-      <div class="button" @click="enter('*')">*</div>
+      <div class="button" id="div" @click="enter('*')">*</div>
     </div>
     <div class="row-3">
       <div class="button" @click="enter(4)">4</div>
       <div class="button" @click="enter(5)">5</div>
       <div class="button" @click="enter(6)">6</div>
-      <div class="button" @click="enter('-')">-</div>
+      <div class="button" id="div" @click="enter('-')">-</div>
     </div>
     <div class="row-4">
       <div class="button" @click="enter(1)">1</div>
       <div class="button" @click="enter(2)">2</div>
       <div class="button" @click="enter(3)">3</div>
-      <div class="button" @click="enter('+')">+</div>
+      <div class="button" id="div" @click="enter('+')">+</div>
     </div>
     <div class="row-5">
       <div class="button" @click="enter(0)">0</div>
       <div class="button" @click="enter('.')">.</div>
-      <div class="button equal" @click="equal">=</div>
+      <div class="button equal" id="div" @click="equal">=</div>
     </div>
   </div>
 </template>
@@ -92,29 +92,28 @@ export default {
 </script>
 <style scoped>
 .calculator {
-  min-width: 350px;
+  min-width: 300px;
   background-color: black;
   border: 1px solid black;
   border-radius: 10px;
   display: flex;
   font-size: 24px;
-  width: 35%;
-  height: 30rem;
-  margin: auto;
-  margin-top: 60px;
+  width: 25%;
+  height: 32rem;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  padding: 5px;
+  margin: 60px 0px;
 }
 .display {
   min-width: 300px;
-  font-size: 30px;
-  width: 90;
-  margin: 1rem auto;
+  width: 20%;
+  margin: auto;
   text-align: right;
-  height: 120px;
-  border: 1px solid grey;
-  border-radius: 10px;
+  height: 80px;
+  cursor: pointer;
+  border-radius: 5px;
   background-color: black;
 }
 
@@ -128,11 +127,17 @@ export default {
 }
 .button.equal {
   width: 47%;
+  color: orangered;
 }
-.button:hover,
-.button.button.equal:hover {
-  color: #f8096d;
-  box-shadow: 0.3rem #f8096d;
+#ac {
+  color: orangered;
+}
+#div {
+  color: rgb(10, 245, 174);
+}
+.button:hover {
+  color: orangered;
+  box-shadow: 0.3rem 0.2rem 0.2rem orangered;
 }
 .row-1,
 .row-2,
@@ -147,6 +152,7 @@ export default {
   height: auto;
   display: flex;
   justify-content: space-between;
+  font-size: 35px;
 }
 
 .input,
@@ -157,8 +163,10 @@ output {
 }
 .input {
   color: white;
+  font-size: 30px;
 }
 .output {
   color: white;
+  font-size: 25px;
 }
 </style>
