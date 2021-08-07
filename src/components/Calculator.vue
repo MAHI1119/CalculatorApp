@@ -169,4 +169,21 @@ output {
   color: white;
   font-size: 25px;
 }
+@media (min-width: 10px) and (max-width: 400px) {
+  .row-1,
+  .row-2,
+  .row-3,
+  .row-4,
+  .row-5 {
+    align-items: center;
+    margin: auto;
+    margin-top: 10px;
+    color: white;
+    width: 90%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    font-size: 30px;
+  }
+}
 </style>
